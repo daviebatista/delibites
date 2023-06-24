@@ -1,0 +1,44 @@
+@import '../../../styles.scss';
+
+header  {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.divHeader  {
+    background-color: $lightYellow;
+    border-bottom: 2px solid $lightPink;
+}
+
+.logo   {
+    width: 40px;
+}
+
+a   {
+    color: $darkPink;
+    font-family: $q;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: 0.4s;
+    &:hover {
+        @include toPink;
+    }
+}
+
+.header-texts   {
+    font-family: $q;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+@media (max-width: 380px)   {
+    header  {
+        justify-content: center;
+    }
+}
