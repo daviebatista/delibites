@@ -10,7 +10,9 @@ import { AboutComponent } from './components/pages/about/about.component';
 import { SearchComponent } from './components/pages/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FoodCardComponent } from './components/pages/home/food-card/food-card.component';
-import { SingleRecipeComponent } from './components/pages/single-recipe/single-recipe.component'
+import { SingleRecipeComponent } from './components/pages/single-recipe/single-recipe.component';
+import { MainInformationComponent } from './components/pages/single-recipe/main-information/main-information.component';
+import { SameCategoryComponent } from './components/pages/single-recipe/main-information/same-category/same-category.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { SingleRecipeComponent } from './components/pages/single-recipe/single-r
     AboutComponent,
     SearchComponent,
     FoodCardComponent,
-    SingleRecipeComponent
+    SingleRecipeComponent,
+    MainInformationComponent,
+    SameCategoryComponent
   ],
   imports: [
     BrowserModule,

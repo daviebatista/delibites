@@ -1,7 +1,7 @@
 <div class="d-flex flex-wrap gap-3 justify-content-center px-5">
-    <div routerLink="/recipe" [queryParams]="{id: food.id}" *ngFor="let food of foods" class="food-card">
+    <div routerLink="/recipe" [queryParams]="{idMeal: food.idMeal}" *ngFor="let food of foods" class="food-card">
       <div>
-        <img src="{{food.strMealThumb}}" alt={{food.title}} class="imageCard" *ngIf="food.strMealThumb; else noImage">
+        <img src="{{food.strMealThumb}}" alt={{food.strMeal}} class="imageCard" *ngIf="food.strMealThumb; else noImage">
       </div>
       <div class="food-information">
         <p class="meal-name py-3">{{food.strMeal}}</p>
