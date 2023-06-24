@@ -1,4 +1,5 @@
 /*-------------------------------------------------------------------<COLORS>----------------------------------------------------------------------------------------------*/
+/*Chosen color palette was obtained from Color Hunt: https://colorhunt.co/palette/fffad7ffe4a7ff90bbff2171*/
 /*darkest-pink*/    $darkPink: #FF2171;
 /*lightest-pink*/   $lightPink: #FF90BB;
 /*lightest-yellow*/ $lightYellow: #FFE4A7;
@@ -10,9 +11,10 @@
 /*font-family: 'Ysabeau Infant'*/   $yi: 'Ysabeau Infant';
 
 /*----------------------------------------------------------<TRANSITIONS AND EFFECTSN>------------------------------------------------------------------------------------*/
-@mixin toPink   {
+@mixin toPink   /*used to transition from $darkPink texts*/   { 
     color: $lightPink;
     filter:contrast(150%);
+    transform: scale(1.02);
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/

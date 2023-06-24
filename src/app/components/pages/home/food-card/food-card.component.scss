@@ -1,0 +1,20 @@
+@import '../../../../../styles.scss';
+
+.food-card  {
+    width: 320px;
+    border: 1px solid $lightPink;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.food-card:hover    {
+    border-color: $darkPink;
+}
+
+.imageCard  {
+    width: 100%;
+}
+
+.food-information   {
+    padding: 14px 20px;
+}
