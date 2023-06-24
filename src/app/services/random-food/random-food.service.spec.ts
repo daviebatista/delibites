@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RandomRecipesService } from './random-recipes.service';
+import { RandomRecipesService } from './random-food.service';
 
-describe('RandomRecipesService', () => {
+describe('RandomFoodService', () => {
   let service: RandomRecipesService;
 
   beforeEach(() => {

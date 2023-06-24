@@ -1,26 +1,76 @@
 <div class="d-flex flex-wrap gap-3 justify-content-center px-5">
     <div routerLink="/recipe" [queryParams]="{id: food.id}" *ngFor="let food of foods" class="food-card">
       <div>
-        <img src={{food.image}} alt={{food.title}} class="imageCard" *ngIf="food.image; else noImage">
+        <img src="{{food.strMealThumb}}" alt={{food.title}} class="imageCard" *ngIf="food.strMealThumb; else noImage">
       </div>
       <div class="food-information">
-        <p><strong>Nome:</strong> {{food.title}}</p>
-        <p><strong>Tempo de preparo:</strong> {{food.readyInMinutes}} minutos</p>
-        <p>
-          <strong>Vegetariano: </strong>
-          <span *ngIf="food.vegetarian === true; else negativeRes">Sim</span>
-        </p>
-        <p>
-          <strong>Vegano: </strong>
-          <span *ngIf="food.vegetarian === true; else negativeRes">Sim</span>
-        </p>
+        <p class="meal-name py-3">{{food.strMeal}}</p>
+        <div class="meal-category" [ngSwitch]="food.strCategory">
+          <span *ngSwitchCase="'Beef'" class="category-span">
+            <img  src="https://img.icons8.com/?size=512&id=72fb58nJ8o2E&format=png" class="category-image"/>
+            <p class="category-text">{{food.strCategory}}</p>
+          </span>
+          <span *ngSwitchCase="'Breakfast'" class="category-span">
+            <img  src="https://img.icons8.com/?size=512&id=nURT4IvtoTKl&format=png" class="category-image"/>
+            <p class="category-text">{{food.strCategory}}</p>
+          </span>
+          <span *ngSwitchCase="'Chicken'" class="category-span">
+            <img  src="https://img.icons8.com/?size=512&id=jxmkLuaUTYIz&format=png" class="category-image"/>
+            <p class="category-text">{{food.strCategory}}</p>
+          </span>
+          <span *ngSwitchCase="'Dessert'" class="category-span">
+            <img  src="https://img.icons8.com/?size=512&id=wWLYI5Lwwztw&format=png" class="category-image"/>
+            <p class="category-text">{{food.strCategory}}s</p>
+          </span>
+          <span *ngSwitchCase="'Goat'" class="category-span">
+            <img  src="https://img.icons8.com/?size=512&id=3o0FbuvvQrHw&format=png" class="category-image"/>
+            <p class="category-text">{{food.strCategory}}</p>
+          </span>
+          <span *ngSwitchCase="'Lamb'" class="category-span">
+            <img  src="https://img.icons8.com/?size=1x&id=16097&format=png" class="category-image"/>
+            <p class="category-text">{{food.strCategory}}</p>
+          </span>
+          <span *ngSwitchCase="'Miscellaneous'" class="category-span">
+            <img  src="https://img.icons8.com/?size=1x&id=xebNBJdG2QFj&format=png" class="category-image"/>
+            <p class="category-text">Misc</p>
+          </span>
+          <span *ngSwitchCase="'Pasta'" class="category-span">
+            <img  src="https://img.icons8.com/?size=512&id=1mOD9WkOxNjQ&format=png" class="category-image"/>
+            <p class="category-text">{{food.strCategory}}</p>
+          </span>
+          <span *ngSwitchCase="'Pork'" class="category-span">
+            <img  src="https://img.icons8.com/?size=512&id=YdXHmSLgUk8V&format=png" class="category-image"/>
+            <p class="category-text">{{food.strCategory}}</p>
+          </span>
+          <span *ngSwitchCase="'Seafood'" class="category-span">
+            <img  src="https://img.icons8.com/?size=512&id=AGXiMROKjSUw&format=png" class="category-image"/>
+            <p class="category-text">{{food.strCategory}}</p>
+          </span>
+          <span *ngSwitchCase="'Side'" class="category-span">
+            <img  src="https://img.icons8.com/?size=1x&id=tCyYX1bOAsbt&format=png" class="category-image"/>
+            <p class="category-text">{{food.strCategory}} Dishes</p>
+          </span>
+          <span *ngSwitchCase="'Starter'" class="category-span">
+            <img  src="https://img.icons8.com/?size=1x&id=JGzXoF1SY8K0&format=png" class="category-image"/>
+            <p class="category-text">{{food.strCategory}}s</p>
+          </span>
+          <span *ngSwitchCase="'Vegetarian'" class="category-span">
+            <img  src="https://img.icons8.com/?size=1x&id=mPUQLdCH2jnX&format=png" class="category-image"/>
+            <p class="category-text">{{food.strCategory}}</p>
+          </span>
+          <span *ngSwitchDefault="" class="category-span">
+            <img  src="https://img.icons8.com/?size=1x&id=gLuFxVLbECtT&format=png" class="category-image"/>
+            <p class="category-text">Others</p>
+          </span>
+        </div>
+        <p class="meal-nationality"><strong>Nationality:</strong> {{food.strArea}}</p>
       </div>
     </div>
   </div>
   
-  <div *ngIf="loading" class="spinner-border d-block mx-auto" role="status"></div>
+  <div *ngIf="loading" class="spinner-border d-block mx-auto colorfulSpinner" role="status"></div>
   
-  <div *ngIf="loadingMore" class="spinner-border d-block mx-auto my-4" role="status"></div>
+  <div *ngIf="loadingMore" class="spinner-border d-block mx-auto my-4 colorfulSpinner" role="status"></div>
   
   <ng-template #noImage>
     <p class="mt-3 py-3 text-center"><strong>Sem imagem no momento</strong></p>
@@ -31,7 +81,7 @@
   </ng-template>
   
   <button (click)="loadMore()" *ngIf="foods?.length < 9; else buttonDisabled" type="button"
-    class="btn btn-primary d-block mx-auto mt-4">Carregar mais</button>
+    class="btn btn-outline-danger d-block mx-auto mt-4">Load more</button>
   
   <ng-template #buttonDisabled>
     <button type="button" class="btn disabled btn-secondary d-block mx-auto mt-4">Carregar mais</button>

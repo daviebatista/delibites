@@ -1,20 +1,62 @@
 @import '../../../../../styles.scss';
 
 .food-card  {
-    width: 320px;
     border: 1px solid $lightPink;
+    border-radius: 15px;
     cursor: pointer;
+    width: 320px;
+
     transition: 0.4s;
+    &:hover    {
+        border: 1px solid $darkPink;
+    }
 }
 
-.food-card:hover    {
-    border-color: $darkPink;
-}
+
 
 .imageCard  {
+    border-radius: 15px 15px 0px 0px;
     width: 100%;
 }
 
+.category-span  {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.category-text  {
+    font-family: $q;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.category-image {
+    align-self: center;
+    width: 40px;
+}
+
 .food-information   {
-    padding: 14px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.colorfulSpinner    {
+    color: $darkPink;
+}
+
+.meal-name  {
+    font-family: $o;
+    font-size: 18px;
+    font-weight: bold;
+    height: 50px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.meal-nationality   {
+    font-family: $q;
+    text-align: center;
 }

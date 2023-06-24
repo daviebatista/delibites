@@ -6,11 +6,13 @@ header  {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-between;
+    padding: 0px 132px;
 }
 
 .divHeader  {
     background-color: $lightYellow;
     border-bottom: 2px solid $lightPink;
+    padding: 0px 152px;
 }
 
 .logo   {
