@@ -9,8 +9,8 @@ export class RandomRecipesService {
   constructor (private http: HttpClient) {}
 
     listRandomFood (take: number)  {
-      const key: string = ""
-      const apiUrl = `GET https://api.spoonacular.com/recipes/random?apiKey=${key}&number=${take}`
+      const key: string = "844b90a391584f688d459a9a55f15933"
+      const apiUrl = `https://api.spoonacular.com/recipes/random?apiKey=844b90a391584f688d459a9a55f15933&number=${take}`
 
       return this.http.get(apiUrl)
     }

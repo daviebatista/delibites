@@ -4,15 +4,15 @@
         <img src={{food.image}} alt={{food.title}} class="imageCard" *ngIf="food.image; else noImage">
       </div>
       <div class="food-information">
-        <p><strong>Nome:</strong> {{food.title}}</p>
-        <p><strong>Tempo de preparo:</strong> {{food.readyInMinutes}} minutos</p>
-        <p>
-          <strong>Vegetariano: </strong>
-          <span *ngIf="food.vegetarian === true; else negativeRes">Sim</span>
+        <p class="foodTitle text-center">{{food.title}}</p>
+        <p class="foodPrepTime text-center">{{food.readyInMinutes}} minutes</p>
+        <p class=" text-center">
+          <img src="https://img.icons8.com/?size=1x&id=UV9wXr8E86OZ&format=png" *ngIf="food.vegan === true; else negativeRes" alt="yes" class="yesOrNo">
+          <strong class="vegetarianAndOrVeganYes" *ngIf="food.vegetarian === true; else noVegetarian">vegetarian</strong>
         </p>
-        <p>
-          <strong>Vegano: </strong>
-          <span *ngIf="food.vegetarian === true; else negativeRes">Sim</span>
+        <p class=" text-center">
+          <img src="https://img.icons8.com/?size=1x&id=UV9wXr8E86OZ&format=png" *ngIf="food.vegan === true; else negativeRes" alt="yes" class="yesOrNo">
+          <strong class="vegetarianAndOrVeganYes" *ngIf="food.vegan === true; else noVegan">vegan</strong>
         </p>
       </div>
     </div>
@@ -23,16 +23,24 @@
   <div *ngIf="loadingMore" class="spinner-border d-block mx-auto my-4" role="status"></div>
   
   <ng-template #noImage>
-    <p class="mt-3 py-3 text-center"><strong>Sem imagem no momento</strong></p>
+    <p class="mt-3 py-3 text-center"><strong>No image at the moment :(</strong></p>
   </ng-template>
   
   <ng-template #negativeRes>
-    <span>Não</span>
+    <img src="https://img.icons8.com/?size=1x&id=7KfGv0q2npp0&format=png" alt="no" class="yesOrNo">
+  </ng-template>
+
+  <ng-template #noVegetarian>
+    <strong class="vegetarianAndOrVeganNo">vegetarian</strong>
+  </ng-template>
+
+  <ng-template #noVegan>
+    <strong class="vegetarianAndOrVeganNo">vegan</strong>
   </ng-template>
   
   <button (click)="loadMore()" *ngIf="foods?.length < 9; else buttonDisabled" type="button"
-    class="btn btn-primary d-block mx-auto mt-4">Carregar mais</button>
+    class="btn btn-primary d-block mx-auto mt-4">Load more</button>
   
   <ng-template #buttonDisabled>
-    <button type="button" class="btn disabled btn-secondary d-block mx-auto mt-4">Carregar mais</button>
+    <button type="button" class="btn disabled btn-secondary d-block mx-auto mt-4">Load more</button>
   </ng-template>

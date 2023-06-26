@@ -1,0 +1,70 @@
+@import '../../../../../styles.scss';
+
+.mainContainer  {
+  padding: 0px 66px;
+}
+
+.family-q{
+  color: $darkPink;
+  font-family: $q;
+  font-size: 18px;
+
+  strong  {
+    font-weight: bold;
+  }
+}
+
+.foodTitle {
+    border-bottom: 2px solid $darkPink;
+    color: $darkPink;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+  .textDiv {
+    width: 45%;
+  }
+  .imgDiv {
+    width: 50%;
+  }
+
+  a {
+    color: $darkPink;
+    transition: 0.4s;
+
+    &:hover {
+      @include toPink;
+    }
+  }
+
+  .foodImg {
+    border-radius: 10px;
+    width: 100%;
+  }
+  .cardImage {
+    width: 350px;
+    cursor: pointer;
+    border: 1px solid $basic;
+    transition: 0.4s;
+
+    &:hover {
+      border-color: $darkPink;
+    }
+  }
+
+  .recipeLiked  {
+    color: $darkPink;
+  }
+  
+  @media (max-width: 570px) {
+    .mainContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .textDiv {
+      width: 100%;
+    }
+    .imgDiv {
+      width: 100%;
+    }
+  }

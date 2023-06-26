@@ -1,0 +1,17 @@
+<div class="d-flex align-items-center flex-column">
+    <p class="my-5 h3 text-center similarsName">Similar Recipes</p>
+    <div *ngIf="similarRecipes; else noRecipe" class="d-flex gap-5 flex-wrap justify-content-center similarCard">
+      <div routerLink="/recipe" [queryParams]="{id: recipe.id}" (click)="reloadPage()" class="cardRecipe p-3"
+        *ngFor="let recipe of similarRecipes">
+        <p class="similarRecipeName">{{recipe.title}}</p>
+        <p class="similarRecipeTime">{{recipe.readyInMinutes}} minutes</p>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="loading" class="spinner-border d-block mx-auto my-5" role="status">
+  </div>
+  
+  <ng-template #noRecipe>
+    <p class="text-center my-5"><strong>No similar recipes! :(</strong></p>
+  </ng-template>

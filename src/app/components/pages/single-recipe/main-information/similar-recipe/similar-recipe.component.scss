@@ -1,0 +1,47 @@
+@import '../../../../../../styles.scss';
+
+.cardRecipe {
+  border: 1px solid $lightPink;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 300px;
+
+  transition: 0.4s;
+  &:hover {
+    border-color: $darkPink;
+    color: $darkPink;
+    transform: scale(1.025);
+
+    .similarRecipeName  {
+      color: $lightPink;
+    }
+  }
+}
+
+.similarsName {
+  align-self: center;
+  border-bottom: 2px solid $darkPink;
+  color: $darkPink;
+  font-family: $q;
+  font-weight: bold;
+  padding-bottom: 5px;
+  width: 90%;
+}
+
+.similarRecipeName  {
+  color: $darkPink;
+  font-family: $q;
+  font-size: 18px;
+  font-weight: bold;
+  height: 50px;
+  text-align: center;
+
+  transition: 0.4s;
+}
+
+.similarRecipeTime  {
+  color: $darkPink;
+  font-family: $q;
+  font-size: 14px;
+  text-align: center;
+}

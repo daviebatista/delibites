@@ -3,15 +3,48 @@
 .food-card  {
     width: 320px;
     border: 1px solid $lightPink;
+    border-radius: 15px;
     cursor: pointer;
     transition: 0.4s;
+
+    &:hover    {
+        border-color: $darkPink;
+        transform: scale(1.005);
+    }
 }
 
-.food-card:hover    {
-    border-color: $darkPink;
+.yesOrNo    {
+    height: 20px;
+    width: 20px;
+}
+
+.foodTitle  {
+    font-family: $q;
+    font-size: 18px;
+    font-weight: bold;
+    height: 60px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.vegetarianAndOrVeganYes   {
+    color: greenyellow;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.vegetarianAndOrVeganNo   {
+    color: $darkPink;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.foodPrepTime   {
+    font-family: $q;
 }
 
 .imageCard  {
+    border-radius: 15px 15px 0px 0px;
     width: 100%;
 }
 
