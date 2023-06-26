@@ -9,11 +9,11 @@ import { SingleRecipeService } from 'src/app/services/single-recipe/single-recip
   styleUrls: ['./main-information.component.scss'],
 })
 export class MainInformationComponent implements OnInit {
-  public loading: boolean = true;
-  public recipeId: number = 1;
-  public food: any = {};
+  public loading: boolean = true
+  public recipeId: number = 1
+  public food: any = {}
 
-  @Output() recipeIdSimilar!: number;
+  @Output() recipeIdSimilar!: number
 
   constructor(
     private service: SingleRecipeService,
@@ -22,13 +22,13 @@ export class MainInformationComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRecipeId();
-    this.takeRecipe(this.recipeId);
-    this.recipeIdSimilar = this.recipeId;
+    this.takeRecipe(this.recipeId)
+    this.recipeIdSimilar = this.recipeId
   }
 
   getRecipeId() {
     this.route.queryParams.subscribe((queryParams: any) => {
-      this.recipeId = queryParams['id'];
+      this.recipeId = queryParams['id']
     });
   }
 
@@ -37,11 +37,11 @@ export class MainInformationComponent implements OnInit {
       .takeRecipe(id)
       .pipe(
         finalize(() => {
-          this.loading = false;
+          this.loading = false
         })
       )
       .subscribe((data: any) => {
         this.food = data;
-      });
+      })
   }
 }

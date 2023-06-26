@@ -8,15 +8,15 @@ import { SingleRecipeService } from 'src/app/services/single-recipe/single-recip
   styleUrls: ['./similar-recipe.component.scss'],
 })
 export class SimilarRecipeComponent implements OnInit {
-  public similarRecipes: any = [];
-  public loading = true;
+  public similarRecipes: any = []
+  public loading = true
 
   @Input() recipeIdSimilar!: number;
 
   constructor(private service: SingleRecipeService) {}
 
   ngOnInit(): void {
-    this.takeSimilarRecipes(this.recipeIdSimilar);
+    this.takeSimilarRecipes(this.recipeIdSimilar)
   }
 
   takeSimilarRecipes(id: number) {
@@ -28,13 +28,13 @@ export class SimilarRecipeComponent implements OnInit {
         })
       )
       .subscribe((data: any) => {
-        this.similarRecipes = data.slice(0, 3);
-      });
+        this.similarRecipes = data.slice(0, 3)
+      })
   }
 
   reloadPage() {
     setTimeout(() => {
       window.location.reload();
-    }, 1);
+    }, 1)
   }
 }

@@ -39,7 +39,7 @@
   </ng-template>
   
   <button (click)="loadMore()" *ngIf="foods?.length < 9; else buttonDisabled" type="button"
-    class="btn btn-primary d-block mx-auto mt-4">Load more</button>
+    class="btn d-block mx-auto mt-4 pinkBg">Load more</button>
   
   <ng-template #buttonDisabled>
     <button type="button" class="btn disabled btn-secondary d-block mx-auto mt-4">Load more</button>

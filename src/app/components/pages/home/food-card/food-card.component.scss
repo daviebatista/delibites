@@ -1,12 +1,12 @@
 @import '../../../../../styles.scss';
 
 .food-card  {
-    width: 320px;
     border: 1px solid $lightPink;
     border-radius: 15px;
     cursor: pointer;
+    width: 320px;
+    
     transition: 0.4s;
-
     &:hover    {
         border-color: $darkPink;
         transform: scale(1.005);
@@ -50,4 +50,11 @@
 
 .food-information   {
     padding: 14px 20px;
+}
+
+.pinkBg {
+    background-color: $darkPink;
+    color: $basic;
+    font-family: $q;
+    font-weight: bold;
 }

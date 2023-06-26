@@ -1,0 +1,24 @@
+@import '../../../../styles.scss';
+
+.aboutContainer {
+    padding: 40px 66px;
+
+    h2  {
+        font-family: $o;
+        padding-top: 10px;
+    }
+
+    p   {
+        border-bottom: 2px solid $darkPink;
+        font-family: $q;
+        font-weight: 500;
+        padding: 10px 5px 30px 5px;
+    }
+
+    h6  {
+        font-family: $q;
+        font-weight: bold;
+        padding-top: 20px;
+        text-align: center;
+    }
+}

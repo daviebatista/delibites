@@ -1,0 +1,66 @@
+@import '../../../../styles.scss';
+
+.searchContainer    {
+    padding: 50px 56px;
+}
+
+input {
+    border-radius: 10px;
+    border-color: $lightPink;
+    border-radius: 10px 0px 0px 10px;
+    font-family: $q;
+    height: 50px;
+    padding-left: 20px;
+    outline: $lightPink;
+    width: 90%;
+
+    &:focus {
+        outline: 1px solid $darkPink;
+    }
+}
+
+button {
+    background-color: $lightPink;
+    border-color: transparent;
+    border: 1px 1px 1px 0px solid $darkPink;
+    border-radius: 0px 10px 10px 0px;
+    color: $lightYellow;
+    font-family: $q;
+    height: 50px;
+    width: 100px;
+
+    transition: 0.2s;
+    &:hover {
+        background-color: $darkPink;
+        color: $basic;
+    }
+}
+
+.foodCard {
+    border: 1px solid $lightPink;
+    border-radius: 10px;
+    height: auto;
+    transform: 0.4s;
+    width: 300px;
+
+    cursor: pointer;
+    &:hover {
+        border: 1px solid $darkPink;
+        transform: scale(1.015);
+    }
+}
+
+.cardImage {
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+}
+
+.family-q{
+    color: $darkPink;
+    font-family: $q;
+    font-size: 18px;
+
+    strong  {
+        font-weight: bold;
+    }
+}

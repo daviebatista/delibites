@@ -18,53 +18,59 @@
     border-bottom: 2px solid $darkPink;
     color: $darkPink;
     margin-bottom: 20px;
-    padding-bottom: 10px;
-  }
-  .textDiv {
-    width: 45%;
-  }
-  .imgDiv {
-    width: 50%;
+    padding-bottom: 5px;
   }
 
-  a {
-    color: $darkPink;
-    transition: 0.4s;
+.textDiv {
+  width: 45%;
+}
 
-    &:hover {
-      @include toPink;
-    }
+.imgDiv {
+  width: 50%;
+}
+
+a {
+  color: $darkPink;
+  transition: 0.4s;
+
+  &:hover {
+    @include toPink;
   }
+}
 
   .foodImg {
+    border: 2px solid $darkPink;
     border-radius: 10px;
     width: 100%;
   }
-  .cardImage {
-    width: 350px;
-    cursor: pointer;
-    border: 1px solid $basic;
-    transition: 0.4s;
 
-    &:hover {
-      border-color: $darkPink;
-    }
-  }
+.cardImage {
+  cursor: pointer;
+  border: 1px solid $basic;
+  transition: 0.4s;
+  width: 350px;
 
-  .recipeLiked  {
-    color: $darkPink;
+  &:hover {
+    border-color: $darkPink;
   }
+}
+
+.recipeLiked  {
+  color: $darkPink;
+}
   
-  @media (max-width: 570px) {
-    .mainContainer {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .textDiv {
-      width: 100%;
-    }
-    .imgDiv {
-      width: 100%;
-    }
+@media (max-width: 570px) {
+  .mainContainer  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
+
+  .textDiv  {
+    width: 100%;
+  }
+
+  .imgDiv {
+    width: 100%;
+    }
+}
